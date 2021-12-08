@@ -19,7 +19,24 @@ def main():
         except:
             print("\nError")
 
-        print(reader)
+        drawn = draw(reader)
+        boards = board(reader)
+        print(boards)
+
+
+def draw(entry: list[str]) -> list[int]:
+    return [int(i) for i in entry[0].split(",")]
+
+
+def board(entry: list[str]):
+    bla = []
+    for row in entry[2:]:
+        if row:
+            bla.append([int(i) for i in row.split(",")])
+    return bla
+
+    # return [[int(i) for i in row.split(",")] for row in entry[2:] if row]
+    # return [int(i) for row in entry[2:] for i in row.split(",") if row]
 
 
 if __name__ == "__main__":
