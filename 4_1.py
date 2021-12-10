@@ -1,4 +1,4 @@
-#! 2021\venv\Scripts\python.exe
+#! venv\Scripts\python.exe
 
 from pathlib import Path
 
@@ -28,15 +28,22 @@ def draw(entry: list[str]) -> list[int]:
     return [int(i) for i in entry[0].split(",")]
 
 
-def board(entry: list[str]):
-    bla = []
-    for row in entry[2:]:
-        if row:
-            bla.append([int(i) for i in row.split(",")])
-    return bla
+def board(entry: list[str]) -> list[list[int]]:
 
-    # return [[int(i) for i in row.split(",")] for row in entry[2:] if row]
-    # return [int(i) for row in entry[2:] for i in row.split(",") if row]
+    return [[int(i) for i in row.split()] for row in entry[2:] if row]
+    # bla = []
+    # for row in entry[2:]:
+    #     if row:
+    #         bleh = []
+    #         for i in row.split():
+    #             bleh.append(int(i))
+
+    #         bla.append(bleh)
+    # return bla
+
+    # bla.append([int(i) for i in row.split(",")])
+
+    # return [[int(i) for i in row.split(",")] for row in entry[2:]]
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def main():
-    f_path = Path("input\\test.txt")
+    f_path = Path("input\\3.txt")
 
     if f_path.exists():
         try:
